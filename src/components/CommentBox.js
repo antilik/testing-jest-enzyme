@@ -4,11 +4,10 @@ class CommentBox extends Component {
   state = { comment: "" };
   handleChange = (event) => {
     this.setState({ comment: event.target.value });
-    console.log("state >>>>>>>>>>", this.state);
   };
 
   handleSubmit = (event) => {
-    event.PreventDefault();
+    event.preventDefault();
 
     // TODO: call action saving to Redux
 
