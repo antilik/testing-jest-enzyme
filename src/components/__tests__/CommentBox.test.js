@@ -1,11 +1,32 @@
-// import React from "react";
-// import ReactDOM from "react-dom";
+import React from "react";
+import { mount } from "enzyme";
+// https://enzymejs.github.io/enzyme/docs/api/mount.html
+// https://devhints.io/enzyme
 
-// import CommentBox from "components/CommentBox";
+import CommentBox from "components/CommentBox";
 
-it("shows a comment box", () => {
-  //   const div = document.createElement("div");
-  //   ReactDOM.render(<CommentBox />, div);
-  //   expect(div.innerHTML).toContain("Comment Box");
-  //   ReactDOM.unmountComponentAtNode(div);
+describe("<CommonBox />", () => {
+  let wrapped = null;
+
+  beforeEach(() => {
+    wrapped = mount(<CommentBox />);
+  });
+
+  afterEach(() => {
+    wrapped.unmount();
+  });
+
+  it("has a text area and a button", () => {
+    expect(wrapped.find("textarea").length).toEqual(1);
+
+    expect(wrapped.find("button").length).toEqual(1);
+  });
+
+  it("can enter input into the textarea", () => {
+    //
+  });
+
+  it("when input is submitted, textarea should get emptied", () => {
+    //
+  });
 });
