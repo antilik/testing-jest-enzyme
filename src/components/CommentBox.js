@@ -13,7 +13,9 @@ const CommentBox = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(saveComment(comment));
+    if (comment.trim()) {
+      dispatch(saveComment(comment));
+    }
     setComment("");
   };
 

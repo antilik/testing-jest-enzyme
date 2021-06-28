@@ -5,8 +5,12 @@ import { useSelector } from "react-redux";
 const CommentList = () => {
   const commentList = useSelector((store) => store.comments);
 
-  console.log("commentList >>>>>>>>>>", commentList);
+  const ListItem = (name) => <li key={name}>{name}</li>;
 
-  return <div>Comment List</div>;
+  return (
+    <div>
+      <ul>{commentList.map((name) => ListItem(name))}</ul>
+    </div>
+  );
 };
 export default CommentList;
