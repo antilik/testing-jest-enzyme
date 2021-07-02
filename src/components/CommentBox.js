@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
+// import useRequireAuth from "components/hooks/useRequireAuth";
+import withRequireAuth from "components/withRequireAuth";
 import { fetchComments, saveComment } from "actions";
 
-const CommentBox = () => {
-  const [comment, setComment] = useState("");
+const CommentBox = (props) => {
+  // useRequireAuth();
   const dispatch = useDispatch();
+  const history = useHistory();
+
+  const [comment, setComment] = useState("");
 
   const handleChange = (event) => {
     setComment(event.target.value);
@@ -21,6 +27,7 @@ const CommentBox = () => {
 
   const handleFetchComments = () => {
     dispatch(fetchComments());
+    history.push("/");
   };
 
   return (
@@ -39,4 +46,4 @@ const CommentBox = () => {
   );
 };
 
-export default CommentBox;
+export default withRequireAuth(CommentBox);

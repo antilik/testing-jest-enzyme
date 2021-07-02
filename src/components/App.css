@@ -1,0 +1,10 @@
+.nav-list__container {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+.nav-list__item {
+  margin-right: 100px;
+}
