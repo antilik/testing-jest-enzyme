@@ -16,6 +16,9 @@ const CommentBox = (props) => {
   const handleChange = (event) => {
     setComment(event.target.value);
   };
+  const navigateHome = () => {
+    history.push("/");
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,11 +26,12 @@ const CommentBox = (props) => {
       dispatch(saveComment(comment));
     }
     setComment("");
+    navigateHome();
   };
 
   const handleFetchComments = () => {
     dispatch(fetchComments());
-    history.push("/");
+    navigateHome();
   };
 
   return (

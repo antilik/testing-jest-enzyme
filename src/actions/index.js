@@ -7,16 +7,14 @@ export const saveComment = (comment) => ({
   payload: comment,
 });
 
-export const fetchComments = async () => {
-  const response = await axios.get(
-    "https://jsonplaceholder.typicode.com/comments",
-  );
+export function fetchComments() {
+  const response = axios.get("https://jsonplaceholder.typicode.com/comments");
 
   return {
     type: FETCH_COMMENT,
     payload: response,
   };
-};
+}
 
 export const changeAuth = (isLoggedIn) => ({
   type: CHANGE_AUTH,
