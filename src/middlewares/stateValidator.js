@@ -1,4 +1,7 @@
 import tv4 from "tv4";
+// https://github.com/geraintluff/tv4
+// http://json-schema.org/
+// https://jsonschema.net/home
 
 import stateSchema from "middlewares/stateSchema";
 
